@@ -6,11 +6,18 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Payment {
 	private String units;
-	private String accNo;
+	private String additionalUnits;
+	public String getAdditionalUnits() {
+		return additionalUnits;
+	}
+	public void setAdditionalUnits(String additionalUnits) {
+		this.additionalUnits = additionalUnits;
+	}
+	private int accNo;
 	private String dueDate;
 	private String amount;
 	private String pricePerUnit;
-	private String additionalUnit;
+	private String additionalUnitPrice;
 	
 	
 	public String getAmount() {
@@ -25,11 +32,11 @@ public class Payment {
 	public void setPricePerUnit(String pricePerUnit) {
 		this.pricePerUnit = pricePerUnit;
 	}
-	public String getAdditionalUnit() {
-		return additionalUnit;
+	public String getAdditionalUnitPrice() {
+		return additionalUnitPrice;
 	}
-	public void setAdditionalUnit(String additionalUnit) {
-		this.additionalUnit = additionalUnit;
+	public void setAdditionalUnitPrice(String additionalUnitPrice) {
+		this.additionalUnitPrice = additionalUnitPrice;
 	}
 	public String getUnits() {
 		return units;
@@ -37,10 +44,10 @@ public class Payment {
 	public void setUnits(String units) {
 		this.units = units;
 	}
-	public String getAccNo() {
+	public int getAccNo() {
 		return accNo;
 	}
-	public void setAccNo(String accNo) {
+	public void setAccNo(int accNo) {
 		this.accNo = accNo;
 	}
 	public String getDueDate() {
@@ -49,5 +56,12 @@ public class Payment {
 	public void setDueDate(String dueDate) {
 		this.dueDate = dueDate;
 	}
+	@Override
+	public String toString() {
+		return "Payment [accNo=" + accNo + ", amount=" + amount + ", pricePerUnit=" + pricePerUnit + ", additionalUnits="
+				+ additionalUnits + ", dudeDate=" + dueDate + "]";
+	}
+	
+	
 	
 }
