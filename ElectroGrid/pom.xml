@@ -9,5 +9,6 @@
   
   <modules>
   	<module>PayService</module>
+  	<module>MonitorService</module>
   </modules>
 </project>
