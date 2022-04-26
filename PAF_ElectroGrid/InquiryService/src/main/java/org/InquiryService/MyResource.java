@@ -1,4 +1,4 @@
-package org.PAF_InquiryService;
+package org.InquiryService;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
