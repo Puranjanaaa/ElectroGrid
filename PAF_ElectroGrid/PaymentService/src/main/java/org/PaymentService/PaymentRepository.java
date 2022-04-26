@@ -206,7 +206,7 @@ public class PaymentRepository {
 	
 	
 
-	 public String readAllBill() {
+	 public String readMonitor() {
 	 Client c = Client.create();
 	 WebResource resource =
 	 c.resource("http://localhost:8090/PAF_MonitoringService/webapi/monitors");

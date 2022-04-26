@@ -105,10 +105,10 @@ public class PaymentResource {
 	}
 	
 	@GET
-	@Path("ReadBil")
+	@Path("ReadMonitor")
 	@Produces(MediaType.TEXT_PLAIN)
-	public String readAllBills() {
-	return repo.readAllBill();
+	public String readMonitor() {
+	return repo.readMonitor();
 	}
 	
 }
