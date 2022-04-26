@@ -1,10 +1,9 @@
-package org.PAF_MonitoringService;
-
+package com.maven.pafMonitor;
 
 import java.text.SimpleDateFormat;  
 import java.util.Date;  
 
-import jakarta.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 
