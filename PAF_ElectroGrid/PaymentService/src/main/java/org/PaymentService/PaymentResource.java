@@ -1,5 +1,6 @@
 package org.PaymentService;
 
+
 import java.util.List;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Consumes;
@@ -17,8 +18,8 @@ public class PaymentResource {
 	PaymentRepository repo = new PaymentRepository();
 	
 	@GET
-	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
-	public List<Payment> getPayments() {
+	@Produces({MediaType.APPLICATION_JSON,MediaType.TEXT_HTML})
+	public String getPayments() {
 		System.out.println("DOne");
 		return repo.getPayments()	;
 	} 
@@ -30,6 +31,31 @@ public class PaymentResource {
 		
 		return repo.getPayment(accNo)	;
 	} 
+	
+	@GET
+	@Path("Units/{accNo}")
+	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+	public double getUnits(@PathParam("accNo") int accNo)  {
+		
+		return repo.getUnitsdb(accNo)	;
+	} 
+	
+	@GET
+	@Path("AddUnits/{accNo}")
+	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+	public double getAddUnits(@PathParam("accNo") int accNo)  {
+		
+		return repo.getAddUnitsdb(accNo)	;
+	} 
+	
+	@GET
+	@Path("Amount/{accNo}")
+	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+	public double calcAmount(@PathParam("accNo") int accNo)  {
+		
+		return repo.calcAmount(accNo)	;
+	} 
+	
 	
 	@POST
 	@Path("Payment")
@@ -56,6 +82,18 @@ public class PaymentResource {
 		return p1;
 	}
 	
+	@PUT
+	@Path("Amount/{accNo}")
+	@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+	public void addAmount(@PathParam("accNo") int accNo) {
+		
+			repo.addAmount(accNo);
+		
+	}
+	
+
+	
+	
 	@DELETE
 	@Path("Payment/{accNo}")
 	public Payment deletePayment(@PathParam("accNo")int accNo) {
@@ -65,5 +103,12 @@ public class PaymentResource {
 		
 		return p;
 	}
+	
+	@GET
+	@Path("ReadBil")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String readAllBills() {
+	return repo.readAllBill();
+	}
+	
 }
-

@@ -8,5 +8,11 @@
   <modules>
     <module>PaymentService</module>
     <module>MonitoringService</module>
+    <module>PAF_MonitoringService</module>
+    <module>RedNotice</module>
+    <module>CustomerService</module>
+    <module>customerService</module>
+    <module>EmployeeService</module>
+    <module>PAF_InquiryService</module>
   </modules>
 </project>
